@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Research Project Documentation</title>
+<style>
+:root{--bg:#f6f8fb;--card:#fff;--ink:#18212f;--muted:#5f6b7a;--line:#dfe5ec;--accent:#315efb;--accent2:#eef2ff}
+*{box-sizing:border-box} html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.7}
+header{background:linear-gradient(135deg,#172554,#315efb);color:white;padding:72px 24px 62px}
+.hero{max-width:1120px;margin:auto}.eyebrow{letter-spacing:.12em;text-transform:uppercase;font-size:.8rem;opacity:.82}
+h1{font-size:clamp(2rem,5vw,3.5rem);line-height:1.1;margin:12px 0 18px}
+.hero p{max-width:850px;font-size:1.08rem;opacity:.92}
+nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.navin{max-width:1120px;margin:auto;padding:12px 20px;display:flex;gap:18px;overflow:auto;white-space:nowrap}
+nav a{color:var(--ink);text-decoration:none;font-size:.92rem} nav a:hover{color:var(--accent)}
+main{max-width:1120px;margin:38px auto;padding:0 20px}
+section{margin:0 0 56px}.section-title{font-size:1.8rem;margin-bottom:8px}
+.lead{color:var(--muted);max-width:900px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:28px;box-shadow:0 8px 30px rgba(15,23,42,.05);margin:20px 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
+.smallcard{background:white;border:1px solid var(--line);border-radius:14px;padding:20px}
+.smallcard h3{margin-top:0}.tag{display:inline-block;background:var(--accent2);color:#2443b5;padding:4px 10px;border-radius:999px;font-size:.78rem;font-weight:600}
+.diagram{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px;margin:20px 0;text-align:center}
+.diagram img{max-width:100%;height:auto;border-radius:8px;cursor:zoom-in}
+.caption{color:var(--muted);font-size:.9rem;margin-top:10px}
+ul{padding-left:22px}.architecture-list{columns:2;column-gap:50px}
+footer{border-top:1px solid var(--line);padding:32px 20px;color:var(--muted);text-align:center;background:white}
+@media(max-width:700px){.architecture-list{columns:1}header{padding-top:48px}}
+</style>
+</head>
+<body>
+<header>
+<div class="hero">
+<div class="eyebrow">Research Project Documentation</div>
+<h1>Assistive Technology for Accessible Religious Text Memorization</h1>
+<p>Technical documentation of the proposed learning system, including user interaction, learning workflows, system integration, AI/ML components, and system architecture.</p>
+</div>
+</header>
+
+<nav><div class="navin">
+<a href="#overview">Overview</a><a href="#usecase">Use Case</a><a href="#activity">Activity</a><a href="#sequence">Sequence</a><a href="#class">Class Diagram</a><a href="#architecture">Architecture</a>
+</div></nav>
+
+<main>
+<section id="overview">
+<h2 class="section-title">1. System Overview</h2>
+<p class="lead">The system is an assistive technology for learning and memorizing religious texts, designed around accessibility needs. It supports blind students, deaf students, accompanying teachers, and pesantren administrators.</p>
+<div class="grid">
+<div class="smallcard"><span class="tag">Accessibility</span><h3>Audio-Tactile</h3><p>For blind students: audio navigation, rhythmic audio for tikrar, vibration feedback, practice, and memorization submission.</p></div>
+<div class="smallcard"><span class="tag">Accessibility</span><h3>Visual-Spatial</h3><p>For deaf students: visual text presentation, structural marking/grouping, and spatial mapping to support memorization.</p></div>
+<div class="smallcard"><span class="tag">Assessment</span><h3>ASR + Tajweed NLP</h3><p>Voice submissions can be transcribed using Automatic Speech Recognition and analyzed through a Rule-Based Tajweed NLP module.</p></div>
+<div class="smallcard"><span class="tag">Platforms</span><h3>Web/PWA + Android</h3><p>The interface is designed for smartphones, tablets, laptops, and PCs, connected to the backend through HTTPS/REST API.</p></div>
+</div>
+</section>
+
+<section id="usecase">
+<h2 class="section-title">2. Use Case Diagram</h2>
+<div class="diagram"><img src="images/use-case.png" alt="Use Case Diagram"><div class="caption">Figure 1. Use Case Diagram</div></div>
+<div class="card">
+<p>The use case diagram describes interaction between users and the assistive technology system for religious-text memorization. The four main actors are blind students, deaf students, accompanying teachers, and pesantren administrators.</p>
+<ul>
+<li><strong>Blind students:</strong> access learning materials using audio, rhythmic audio, and vibration feedback.</li>
+<li><strong>Deaf students:</strong> use visual-spatial features to understand and memorize text structure.</li>
+<li><strong>Teachers:</strong> monitor activities and provide evaluation.</li>
+<li><strong>Administrators:</strong> manage student and learning-material data.</li>
+<li><strong>Memorization submission:</strong> supported through speech recognition (ASR) and Tajweed analysis.</li>
+</ul>
+</div>
+</section>
+
+<section id="activity">
+<h2 class="section-title">3. Activity Diagram</h2>
+<div class="diagram"><img src="images/activity.png" alt="Activity Diagram"><div class="caption">Figure 2. Activity Diagram</div></div>
+<div class="card">
+<p>The activity diagram describes the learning and memorization-practice workflow according to accessibility needs. For blind students, the Audio-Tactile module provides audio navigation, rhythmic audio for tikrar, vibration feedback, and practice/submission processed through ASR and Tajweed analysis.</p>
+<p>For deaf students, the Visual-Spatial module provides visual text, structural marking and grouping, and spatial mapping. Both workflows are integrated with the system to record practice results and update memorization progress.</p>
+</div>
+</section>
+
+<section id="sequence">
+<h2 class="section-title">4. Sequence Diagram</h2>
+<div class="diagram"><img src="images/sequence.png" alt="Sequence Diagram"><div class="caption">Figure 3. Sequence Diagram</div></div>
+<div class="card">
+<p>The sequence diagram shows interactions among the student, application, backend, Automatic Speech Recognition (ASR) engine, Tajweed NLP module, and database during practice and memorization submission.</p>
+<p>The process begins with authentication and selection of learning material. During submission, a voice recording is sent to the backend, processed by ASR into a transcription, and analyzed by the Tajweed NLP module. The results are used to generate evaluation and feedback, update memorization progress, and store activity history in the database.</p>
+</div>
+</section>
+
+<section id="class">
+<h2 class="section-title">5. Class Diagram</h2>
+<div class="diagram"><img src="images/class-diagram.png" alt="Class Diagram"><div class="caption">Class Diagram</div></div>
+<div class="card"><p>The class diagram section represents the structural model of the proposed system. The source documentation provides the diagram as part of the system design documentation.</p></div>
+</section>
+
+<section id="architecture">
+<h2 class="section-title">6. System Architecture</h2>
+<div class="diagram"><img src="images/architecture.png" alt="System Architecture"><div class="caption">Figure 4. System Architecture</div></div>
+<div class="card">
+<p>The architecture uses a multi-platform approach with Web/PWA and Android applications as user-interface layers. Both platforms communicate with the backend through HTTPS/REST API.</p>
+<h3>Client Layer</h3>
+<p>The system is designed to be device-independent. It can be accessed through Web/PWA on laptops, PCs, or tablet browsers, Android applications on smartphones and tablets, and other devices supporting browser/PWA. Four user groups are supported: blind students, deaf students, accompanying teachers, and pesantren administrators.</p>
+<h3>Backend Services</h3>
+<ul class="architecture-list">
+<li><strong>Authentication Service:</strong> login/logout, authentication, user roles, and access rights.</li>
+<li><strong>Learning Service:</strong> books, learning materials, learning sessions, exercises, and tikrar/repetition.</li>
+<li><strong>Accessibility Service:</strong> determines how materials are presented according to user needs.</li>
+<li><strong>Progress:</strong> records learning progress, materials studied, practice frequency, history, memorization achievement, and evaluation results.</li>
+<li><strong>Assessment Service:</strong> handles memorization assessment, including practice and evaluation.</li>
+<li><strong>ASR Engine:</strong> converts the student's speech into text/transcription.</li>
+<li><strong>Tajweed NLP:</strong> analyzes the recognized text using the tajweed rules designed in the system.</li>
+<li><strong>Data Access Layer:</strong> separates application services from the database structure.</li>
+</ul>
+<h3>Database Layer</h3>
+<p>The database stores users, books and materials, learning sessions and practice activities, memorization progress, and system logs.</p>
+</div>
+</section>
+</main>
+
+<footer>
+Research Project Documentation · Prototype / System Design
+</footer>
+</body>
+</html>
